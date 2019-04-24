@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,243 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KnowU" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Pink" translatesAutoresizingMaskIntoConstraints="NO" id="LbF-YZ-cG2">
+                                <rect key="frame" x="205" y="230" width="48" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="F4V-9f-URo" appends="YES" id="4Gh-Ap-uKi"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Yellow" translatesAutoresizingMaskIntoConstraints="NO" id="wl9-k9-5dW">
+                                <rect key="frame" x="172" y="171" width="48" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="tqc-ga-emK" appends="YES" id="QWO-a5-7v2"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DarkGreen" translatesAutoresizingMaskIntoConstraints="NO" id="xcf-RO-qkr">
+                                <rect key="frame" x="284" y="171" width="48" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="LTn-lq-UGk" appends="YES" id="hcu-Bv-6ac"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Red" translatesAutoresizingMaskIntoConstraints="NO" id="1fy-zF-g2H">
+                                <rect key="frame" x="60" y="171" width="48" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="E9G-lG-gwx" appends="YES" id="nWt-k7-QrT"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Orange" translatesAutoresizingMaskIntoConstraints="NO" id="1J0-s2-0aD">
+                                <rect key="frame" x="116" y="171" width="48" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ZZ5-HI-VUT" appends="YES" id="Kpe-Hh-8gO"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LightGreen" translatesAutoresizingMaskIntoConstraints="NO" id="uPc-ya-G4n">
+                                <rect key="frame" x="228" y="171" width="48" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="C25-Sx-kY3" appends="YES" id="CfC-hi-pAb"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LightBlue" translatesAutoresizingMaskIntoConstraints="NO" id="P4a-Rb-kpw">
+                                <rect key="frame" x="37" y="230" width="48" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="er5-Ks-SP3" appends="YES" id="SLM-He-KlB"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DarkBlue" translatesAutoresizingMaskIntoConstraints="NO" id="nPE-4P-tUA">
+                                <rect key="frame" x="93" y="230" width="48" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="OcP-18-srk" appends="YES" id="b0F-JH-nYq"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Purple" translatesAutoresizingMaskIntoConstraints="NO" id="P9k-FC-eor">
+                                <rect key="frame" x="149" y="230" width="48" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="V4Z-WZ-HUd" appends="YES" id="GyE-h1-x9q"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Black" translatesAutoresizingMaskIntoConstraints="NO" id="IT0-Cx-Yp4">
+                                <rect key="frame" x="261" y="230" width="48" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="aTS-xv-HHW" appends="YES" id="ShY-7a-jvc"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Select your favorite color" translatesAutoresizingMaskIntoConstraints="NO" id="cUQ-R7-MMO">
+                                <rect key="frame" x="67" y="123" width="240" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Select your favorite typeface" translatesAutoresizingMaskIntoConstraints="NO" id="GjF-cI-Cf1">
+                                <rect key="frame" x="30" y="333" width="314" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Thonburi" translatesAutoresizingMaskIntoConstraints="NO" id="NJD-cT-567">
+                                <rect key="frame" x="67" y="385" width="240" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Georgia" translatesAutoresizingMaskIntoConstraints="NO" id="cgM-Qf-3t2">
+                                <rect key="frame" x="67" y="437" width="240" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Menio" translatesAutoresizingMaskIntoConstraints="NO" id="SSg-zC-F6w">
+                                <rect key="frame" x="69" y="480" width="240" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="next" translatesAutoresizingMaskIntoConstraints="NO" id="uD9-wH-opt">
+                                <rect key="frame" x="228" y="574" width="116" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="pib-ol-4rw" appends="YES" id="zb6-Vs-dIT"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Quasimoda" translatesAutoresizingMaskIntoConstraints="NO" id="YYp-ZK-R2K">
+                                <rect key="frame" x="69" y="516" width="240" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="blackColorImageView" destination="IT0-Cx-Yp4" id="a6N-uQ-BjS"/>
+                        <outlet property="blueColorImageView" destination="P4a-Rb-kpw" id="Vuc-E2-cCs"/>
+                        <outlet property="darkBlueColorImageView" destination="nPE-4P-tUA" id="0Lk-Ie-KbS"/>
+                        <outlet property="darkGreenColorImageView" destination="xcf-RO-qkr" id="AaX-RA-7lc"/>
+                        <outlet property="greenColorImageView" destination="uPc-ya-G4n" id="f3c-5y-3Lv"/>
+                        <outlet property="orangeColorImageView" destination="1J0-s2-0aD" id="YAO-Wb-6im"/>
+                        <outlet property="pinkColorImageView" destination="LbF-YZ-cG2" id="yfS-nt-Dkz"/>
+                        <outlet property="purpleColorImageView" destination="P9k-FC-eor" id="o9U-3e-upk"/>
+                        <outlet property="redColorImageView" destination="1fy-zF-g2H" id="E5d-xt-VJ5"/>
+                        <outlet property="yellowColorImageView" destination="wl9-k9-5dW" id="VTL-cX-PjS"/>
+                        <segue destination="oBC-hh-DD0" kind="show" identifier="nextButtonSegue" id="LlX-zE-Ekw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="pib-ol-4rw">
+                    <connections>
+                        <action selector="nextButtonTapped:" destination="BYZ-38-t0r" id="Bm8-Bo-ctt"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="E9G-lG-gwx">
+                    <connections>
+                        <action selector="redColorTapped:" destination="BYZ-38-t0r" id="1p0-kP-fvH"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ZZ5-HI-VUT"/>
+                <tapGestureRecognizer id="tqc-ga-emK"/>
+                <tapGestureRecognizer id="C25-Sx-kY3"/>
+                <tapGestureRecognizer id="LTn-lq-UGk"/>
+                <tapGestureRecognizer id="er5-Ks-SP3"/>
+                <tapGestureRecognizer id="OcP-18-srk"/>
+                <tapGestureRecognizer id="V4Z-WZ-HUd"/>
+                <tapGestureRecognizer id="F4V-9f-URo"/>
+                <tapGestureRecognizer id="aTS-xv-HHW"/>
             </objects>
+            <point key="canvasLocation" x="14" y="13"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="WP9-bJ-3Vk">
+            <objects>
+                <viewController id="oBC-hh-DD0" customClass="ViewController" customModule="KnowU" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R6W-k8-7Jf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="What is your first name" translatesAutoresizingMaskIntoConstraints="NO" id="0oO-zz-Yn8">
+                                <rect key="frame" x="67" y="107" width="240" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hJT-id-MAa">
+                                <rect key="frame" x="79" y="158" width="206" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Why did you download this app (This is the first question we will save in your archive!)" translatesAutoresizingMaskIntoConstraints="NO" id="MHa-lj-nZw">
+                                <rect key="frame" x="67" y="204" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uHZ-c1-M7f">
+                                <rect key="frame" x="67" y="312" width="240" height="242"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="next" translatesAutoresizingMaskIntoConstraints="NO" id="4oo-G5-mgh">
+                                <rect key="frame" x="232" y="562" width="120" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="uUi-fS-iKg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2lM-NO-Eqa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="901.60000000000002" y="28.335832083958024"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="B44-bt-qRs">
+            <objects>
+                <viewController id="AaM-Fl-cwe" customClass="ViewController" customModule="KnowU" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zVV-kX-bio">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="NZt-mk-Snb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uh8-QU-qac" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1793" y="30"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Black" width="47" height="47"/>
+        <image name="DarkBlue" width="47" height="47"/>
+        <image name="DarkGreen" width="47" height="47"/>
+        <image name="Georgia" width="344" height="36"/>
+        <image name="LightBlue" width="47" height="47"/>
+        <image name="LightGreen" width="47" height="47"/>
+        <image name="Menio" width="344" height="36"/>
+        <image name="Orange" width="47" height="47"/>
+        <image name="Pink" width="47" height="47"/>
+        <image name="Purple" width="47" height="47"/>
+        <image name="Quasimoda" width="344" height="36"/>
+        <image name="Red" width="47" height="47"/>
+        <image name="Select your favorite color" width="285" height="66"/>
+        <image name="Select your favorite typeface" width="383" height="54"/>
+        <image name="Thonburi" width="344" height="36"/>
+        <image name="What is your first name" width="283" height="50"/>
+        <image name="Why did you download this app (This is the first question we will save in your archive!)" width="306" height="101"/>
+        <image name="Yellow" width="47" height="47"/>
+        <image name="next" width="132" height="37"/>
+    </resources>
 </document>
