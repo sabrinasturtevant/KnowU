@@ -31,7 +31,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var quasimodoImageView: UIImageView!
     
     
-    //OUTLET FOR NAME
+    //OUTLET FOR NAME INPPUT AND FIRST QUESTION
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var archveQuestionTextField: UITextView!
+    
+    //OUTLET FOR NAME DISPLAY
+    
+    @IBOutlet weak var nameDisplayLabel: UILabel!
+    
+    //OUTLET FOR COLOR CHANGING BLOCK
+    
+    @IBOutlet weak var colorChangeBlock: UIImageView!
     
     //VARIABLES FOR COLORS
     
@@ -335,6 +346,9 @@ class ViewController: UIViewController {
         georgiaImageView.alpha = 0.5
         menioImageView.alpha = 0.5
         quasimodoImageView.alpha = 0.5
+        georgia = 0
+        menio = 0
+        quasimoda = 0
     }
     
     
@@ -347,6 +361,9 @@ class ViewController: UIViewController {
         georgiaImageView.alpha = 1.0
         menioImageView.alpha = 0.5
         quasimodoImageView.alpha = 0.5
+        thonburi = 0
+        menio = 0
+        quasimoda = 0
     }
     
     @IBAction func menioTapped(_ sender: Any) {
@@ -358,6 +375,9 @@ class ViewController: UIViewController {
         georgiaImageView.alpha = 0.5
         menioImageView.alpha = 1.0
         quasimodoImageView.alpha = 0.5
+        georgia = 0
+        thonburi = 0
+        quasimoda = 0
     }
     
     @IBAction func quasimoda(_ sender: Any) {
@@ -369,7 +389,11 @@ class ViewController: UIViewController {
         georgiaImageView.alpha = 0.5
         menioImageView.alpha = 0.5
         quasimodoImageView.alpha = 1.0
+        georgia = 0
+        menio = 0
+        thonburi = 0
     }
+    
     
     
     
@@ -377,10 +401,24 @@ class ViewController: UIViewController {
     
     @IBAction func nextButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: "nextButtonSegue", sender: nil)
+        print(red)
     }
     
+    //SEGUE FOR 2nd Screen
     
-    
+    @IBAction func nextButtonTappedAgain(_ sender: Any) {
+        performSegue(withIdentifier: "nextButtonAgainSegue", sender: nil)
+        print(red)
+        
+        if red == 1 {
+            colorChangeBlock.backgroundColor = UIColor(red: 0.8078, green: 0.0, blue: 0.0, alpha: 1.0)
+            print(red)
+        }
+
+    }
+    //IT WORKS THROUGH THE FIRST SEGWAY BUT THEN RED GETS RESET TO 0 FOR SOME REASON
+    //I ALSO CAN'T GET THE NAME DISPLAY LABEL TO CONVERT FROM A UI TEXT FEILD TO A STRING BECAUSE THE VARIABLES ARE ACTING LIKE THERE IS NO CLASS
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
