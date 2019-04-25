@@ -293,20 +293,11 @@
                                 <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ex5-9S-0NP">
-                                <rect key="frame" x="84" y="157" width="206" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="uUi-fS-iKg"/>
                     </view>
                     <connections>
-                        <outlet property="archveQuestionTextField" destination="uHZ-c1-M7f" id="lmG-nr-Xx3"/>
-                        <outlet property="nameTextField" destination="Ex5-9S-0NP" id="Gm3-L6-sdj"/>
                         <segue destination="AaM-Fl-cwe" kind="show" identifier="nextButtonAgainSegue" id="nEt-nf-YlO"/>
                     </connections>
                 </viewController>
@@ -319,10 +310,10 @@
             </objects>
             <point key="canvasLocation" x="901.60000000000002" y="28.335832083958024"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller Loaded-->
         <scene sceneID="B44-bt-qRs">
             <objects>
-                <viewController id="AaM-Fl-cwe" customClass="ViewController" customModule="KnowU" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AaM-Fl-cwe" customClass="ViewControllerLoaded" customModule="KnowU" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zVV-kX-bio">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -338,13 +329,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1GC-wb-JVm">
+                                <rect key="frame" x="0.0" y="91" width="375" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NZt-mk-Snb"/>
                     </view>
                     <connections>
-                        <outlet property="colorChangeBlock" destination="Wp5-sR-kXw" id="IJK-ES-FLw"/>
-                        <outlet property="nameDisplayLabel" destination="C3h-wK-6AG" id="l1l-fW-oyP"/>
+                        <outlet property="colorChangeBlock" destination="Wp5-sR-kXw" id="ce6-H9-g8I"/>
+                        <outlet property="smallColorChangeBlock" destination="1GC-wb-JVm" id="Kbu-q4-fPu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uh8-QU-qac" userLabel="First Responder" sceneMemberID="firstResponder"/>

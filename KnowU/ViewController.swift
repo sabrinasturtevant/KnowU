@@ -8,6 +8,27 @@
 
 import UIKit
 
+//VARIABLES FOR COLORS
+
+var red = 0
+var orange = 0
+var yellow = 0
+var green = 0
+var darkgreen = 0
+var blue = 0
+var darkblue = 0
+var purple = 0
+var pink = 0
+var black = 0
+
+//VARIABLES FOR TYPE
+
+var thonburi = 0
+var georgia = 0
+var menio = 0
+var quasimodatext = 0
+
+
 class ViewController: UIViewController {
     
     //OUTLETS FOR COLORS
@@ -31,40 +52,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var quasimodoImageView: UIImageView!
     
     
-    //OUTLET FOR NAME INPPUT AND FIRST QUESTION
-    
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var archveQuestionTextField: UITextView!
-    
-    //OUTLET FOR NAME DISPLAY
-    
-    @IBOutlet weak var nameDisplayLabel: UILabel!
-    
-    //OUTLET FOR COLOR CHANGING BLOCK
-    
-    @IBOutlet weak var colorChangeBlock: UIImageView!
-    
-    //VARIABLES FOR COLORS
-    
-    var red = 0
-    var orange = 0
-    var yellow = 0
-    var green = 0
-    var darkgreen = 0
-    var blue = 0
-    var darkblue = 0
-    var purple = 0
-    var pink = 0
-    var black = 0
-    
-    //VARIABLES FOR TYPE
-    
-    var thonburi = 0
-    var georgia = 0
-    var menio = 0
-    var quasimoda = 0
-    
-    //BASIC FUNCTIONALITY ON FIRST PAGE
     
     @IBAction func redColorTapped(_ sender: Any) {
        red += 1
@@ -340,7 +327,7 @@ class ViewController: UIViewController {
     @IBAction func thonburiTapped(_ sender: Any) {
         thonburi += 1
         if thonburi == 2 {
-            thonburi -= 1
+            thonburi = 1
         }
         thonburiImageView.alpha = 1.0
         georgiaImageView.alpha = 0.5
@@ -348,14 +335,15 @@ class ViewController: UIViewController {
         quasimodoImageView.alpha = 0.5
         georgia = 0
         menio = 0
-        quasimoda = 0
+        quasimodatext = 0
+
     }
     
     
     @IBAction func georgiaTapped(_ sender: Any) {
         georgia += 1
         if georgia == 2 {
-            georgia -= 1
+            georgia = 1
         }
         thonburiImageView.alpha = 0.5
         georgiaImageView.alpha = 1.0
@@ -363,13 +351,14 @@ class ViewController: UIViewController {
         quasimodoImageView.alpha = 0.5
         thonburi = 0
         menio = 0
-        quasimoda = 0
+        quasimodatext = 0
+        
     }
     
     @IBAction func menioTapped(_ sender: Any) {
         menio += 1
         if menio == 2 {
-            menio -= 1
+            menio = 1
         }
         thonburiImageView.alpha = 0.5
         georgiaImageView.alpha = 0.5
@@ -377,14 +366,16 @@ class ViewController: UIViewController {
         quasimodoImageView.alpha = 0.5
         georgia = 0
         thonburi = 0
-        quasimoda = 0
+        quasimodatext = 0
+
     }
     
     @IBAction func quasimoda(_ sender: Any) {
-        quasimoda += 1
-        if quasimoda == 2 {
-            quasimoda -= 1
+        quasimodatext = 1
+        if quasimodatext == 2 {
+            quasimodatext = 1
         }
+       
         thonburiImageView.alpha = 0.5
         georgiaImageView.alpha = 0.5
         menioImageView.alpha = 0.5
@@ -410,21 +401,78 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "nextButtonAgainSegue", sender: nil)
         print(red)
         
-        if red == 1 {
-            colorChangeBlock.backgroundColor = UIColor(red: 0.8078, green: 0.0, blue: 0.0, alpha: 1.0)
-            print(red)
-        }
 
     }
     //IT WORKS THROUGH THE FIRST SEGWAY BUT THEN RED GETS RESET TO 0 FOR SOME REASON
     //I ALSO CAN'T GET THE NAME DISPLAY LABEL TO CONVERT FROM A UI TEXT FEILD TO A STRING BECAUSE THE VARIABLES ARE ACTING LIKE THERE IS NO CLASS
 
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+    
 
 
 }
 
+class ViewControllerLoaded: UIViewController {
+    
+    @IBOutlet weak var colorChangeBlock: UIImageView!
+    
+    @IBOutlet weak var smallColorChangeBlock: UIImageView!
+    
+    
+    
+    override func viewDidLoad() {
+        if red == 1 {
+            colorChangeBlock.backgroundColor = UIColor(red:0.86, green:0.08, blue:0.08, alpha:0.11)
+            smallColorChangeBlock.backgroundColor = UIColor(red:0.86, green:0.08, blue:0.08, alpha:0.49)
+        }
+        
+        if orange == 1 {
+            colorChangeBlock.backgroundColor = UIColor(red:1.00, green:0.65, blue:0.00, alpha:0.11)
+            smallColorChangeBlock.backgroundColor = UIColor(red:1.00, green:0.65, blue:0.00, alpha:0.49)
+        }
+        
+        if yellow == 1 {
+            colorChangeBlock.backgroundColor =  UIColor(red:0.96, green:1.00, blue:0.00, alpha:0.11)
+            smallColorChangeBlock.backgroundColor = UIColor(red:0.96, green:1.00, blue:0.00, alpha:0.49)
+        }
+        
+        if green == 1 {
+        colorChangeBlock.backgroundColor = UIColor(red:0.00, green:1.00, blue:0.11, alpha:0.11)
+            smallColorChangeBlock.backgroundColor = UIColor(red:0.00, green:1.00, blue:0.11, alpha:0.49)
+        }
+        
+        if darkgreen == 1 {
+            colorChangeBlock.backgroundColor = UIColor(red:0.02, green:0.58, blue:0.00, alpha:0.11)
+            smallColorChangeBlock.backgroundColor = UIColor(red:0.02, green:0.58, blue:0.00, alpha:0.49)
+        }
+        
+        if blue == 1 {
+            colorChangeBlock.backgroundColor = UIColor(red:0.35, green:1.00, blue:0.98, alpha:0.11)
+            smallColorChangeBlock.backgroundColor = UIColor(red:0.35, green:1.00, blue:0.98, alpha:0.49)
+        }
+        
+        if darkblue == 1 {
+            colorChangeBlock.backgroundColor = UIColor(red:0.33, green:0.38, blue:1.00, alpha:0.11)
+            smallColorChangeBlock.backgroundColor = UIColor(red:0.33, green:0.38, blue:1.00, alpha:0.49)
+        }
+        
+        if purple == 1 {
+            colorChangeBlock.backgroundColor = UIColor(red:0.40, green:0.00, blue:0.86, alpha:0.11)
+            smallColorChangeBlock.backgroundColor = UIColor(red:0.40, green:0.00, blue:0.86, alpha:0.49)
+        }
+        
+        if pink == 1 {
+            colorChangeBlock.backgroundColor = UIColor(red:1.00, green:0.08, blue:0.82, alpha:0.11)
+            smallColorChangeBlock.backgroundColor = UIColor(red:1.00, green:0.08, blue:0.82, alpha:0.55)
+        }
+        
+        if black == 1 {
+            colorChangeBlock.backgroundColor = UIColor(red:0.00, green:0.00, blue:0.00, alpha:0.11)
+            smallColorChangeBlock.backgroundColor = UIColor(red:0.00, green:0.00, blue:0.00, alpha:0.49)
+        }
+        
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    
+}
