@@ -138,14 +138,6 @@
                                     <outletCollection property="gestureRecognizers" destination="pib-ol-4rw" appends="YES" id="zb6-Vs-dIT"/>
                                 </connections>
                             </imageView>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Quasimoda" translatesAutoresizingMaskIntoConstraints="NO" id="YYp-ZK-R2K">
-                                <rect key="frame" x="69" y="516" width="240" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Dpb-rn-JGR" appends="YES" id="mow-Zb-90K"/>
-                                </connections>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -161,7 +153,6 @@
                         <outlet property="orangeColorImageView" destination="1J0-s2-0aD" id="YAO-Wb-6im"/>
                         <outlet property="pinkColorImageView" destination="LbF-YZ-cG2" id="yfS-nt-Dkz"/>
                         <outlet property="purpleColorImageView" destination="P9k-FC-eor" id="o9U-3e-upk"/>
-                        <outlet property="quasimodoImageView" destination="YYp-ZK-R2K" id="Qfd-je-QYf"/>
                         <outlet property="redColorImageView" destination="1fy-zF-g2H" id="E5d-xt-VJ5"/>
                         <outlet property="thonburiImageView" destination="NJD-cT-567" id="DhZ-zA-4pZ"/>
                         <outlet property="yellowColorImageView" destination="wl9-k9-5dW" id="VTL-cX-PjS"/>
@@ -239,11 +230,7 @@
                         <action selector="menioTapped:" destination="BYZ-38-t0r" id="Dw5-la-OV0"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="Dpb-rn-JGR">
-                    <connections>
-                        <action selector="quasimoda:" destination="BYZ-38-t0r" id="9xb-Wh-hha"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Dpb-rn-JGR"/>
             </objects>
             <point key="canvasLocation" x="14" y="13"/>
         </scene>
@@ -326,27 +313,20 @@
                                 <rect key="frame" x="0.0" y="91" width="375" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WRI-HN-g51">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WRI-HN-g51">
                                 <rect key="frame" x="66" y="279" width="240" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJS-2c-m4W">
-                                <rect key="frame" x="118" y="306" width="150" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Daily Questions">
-                                    <color key="titleColor" red="0.085863448679999996" green="0.0061151352710000001" blue="0.18856164810000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <gestureRecognizers/>
                                 <connections>
-                                    <action selector="dailyQuestionsButtonPressed:" destination="AaM-Fl-cwe" eventType="touchUpInside" id="VcG-P4-5Ex"/>
+                                    <outletCollection property="gestureRecognizers" destination="Ict-9P-WQZ" appends="YES" id="kJY-Hz-rhu"/>
                                 </connections>
-                            </button>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oQa-Nw-PJ5">
                                 <rect key="frame" x="66" y="411" width="240" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kgc-BH-FFr">
-                                <rect key="frame" x="96" y="444" width="186" height="39"/>
+                                <rect key="frame" x="81" y="444" width="210" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Archived Questions">
@@ -357,13 +337,20 @@
                                 </connections>
                             </button>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUT-rN-8Cv">
-                                <rect key="frame" x="146" y="120" width="100" height="32"/>
+                                <rect key="frame" x="45" y="120" width="291" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="FIRST NAME">
                                     <color key="titleColor" red="0.085863448679999996" green="0.0061151352710000001" blue="0.18856164810000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Daily Questions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnt-OU-nkd">
+                                <rect key="frame" x="92" y="310" width="199" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NZt-mk-Snb"/>
@@ -372,15 +359,90 @@
                         <outlet property="archivedQuestionsBlock" destination="oQa-Nw-PJ5" id="nPJ-CL-95m"/>
                         <outlet property="archivedQuestionsButtonOutlet" destination="Kgc-BH-FFr" id="Dzi-Ar-l3l"/>
                         <outlet property="colorChangeBlock" destination="Wp5-sR-kXw" id="ce6-H9-g8I"/>
-                        <outlet property="dailyQuesionsButtonOutlet" destination="EJS-2c-m4W" id="eRs-RG-a7T"/>
                         <outlet property="dailyQuestionsColorChangeBlock" destination="WRI-HN-g51" id="TqT-YT-PPU"/>
+                        <outlet property="dailyQuestionsLabel" destination="gnt-OU-nkd" id="Zfx-TX-YPd"/>
                         <outlet property="firstNameOutlet" destination="SUT-rN-8Cv" id="baG-tV-CIV"/>
                         <outlet property="smallColorChangeBlock" destination="1GC-wb-JVm" id="Kbu-q4-fPu"/>
+                        <segue destination="RcI-3v-EYw" kind="show" id="yOY-za-FIX"/>
+                        <segue destination="dpK-D1-zGS" kind="show" identifier="dailyQuestionsButtonSegue" id="dpa-DI-uCU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uh8-QU-qac" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ict-9P-WQZ">
+                    <connections>
+                        <action selector="dailyQuestionsBlockTapped:" destination="AaM-Fl-cwe" id="Xh7-Am-7GX"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1792.8" y="29.23538230884558"/>
+        </scene>
+        <!--View Controller Loaded-->
+        <scene sceneID="IfV-9H-7Tl">
+            <objects>
+                <viewController id="dpK-D1-zGS" customClass="ViewControllerLoaded" customModule="KnowU" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ITO-Cz-cZS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cMT-5n-sPK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y6b-u8-eaG">
+                                <rect key="frame" x="0.0" y="55" width="375" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E5F-Mf-Jiq">
+                                <rect key="frame" x="49" y="81" width="289" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Daily Questions">
+                                    <color key="titleColor" red="0.085863448679999996" green="0.0061151352710000001" blue="0.18856164810000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Placeholder text question?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NyT-yx-J6a">
+                                <rect key="frame" x="89" y="260" width="230" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3xQ-qr-5m0">
+                                <rect key="frame" x="84" y="321" width="240" height="287"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="AaF-LZ-4mb"/>
+                    </view>
+                    <connections>
+                        <outlet property="dailyQuestionsButtonOutlet" destination="E5F-Mf-Jiq" id="7DN-Zw-KE5"/>
+                        <outlet property="largeBlockDailyQuestions" destination="cMT-5n-sPK" id="zPS-oo-AlN"/>
+                        <outlet property="placeholderTextQuestion" destination="NyT-yx-J6a" id="0lI-uP-0kv"/>
+                        <outlet property="smallBlockDailyQuestions" destination="Y6b-u8-eaG" id="ufY-RN-p2B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="157-4n-6JI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2885.5999999999999" y="28.335832083958024"/>
+        </scene>
+        <!--View Controller Loaded-->
+        <scene sceneID="8BP-kL-fng">
+            <objects>
+                <viewController id="RcI-3v-EYw" customClass="ViewControllerLoaded" customModule="KnowU" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="huY-0b-SMW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="otK-Ns-pKd"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="npY-Rj-G2W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2880" y="776"/>
         </scene>
     </scenes>
     <resources>
@@ -394,7 +456,6 @@
         <image name="Orange" width="47" height="47"/>
         <image name="Pink" width="47" height="47"/>
         <image name="Purple" width="47" height="47"/>
-        <image name="Quasimoda" width="344" height="36"/>
         <image name="Red" width="47" height="47"/>
         <image name="Select your favorite color" width="285" height="66"/>
         <image name="Select your favorite typeface" width="383" height="54"/>

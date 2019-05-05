@@ -26,7 +26,6 @@ var black = 0
 var thonburi = 0
 var georgia = 0
 var menio = 0
-var quasimodatext = 0
 
 
 class ViewController: UIViewController {
@@ -49,7 +48,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var thonburiImageView: UIImageView!
     @IBOutlet weak var georgiaImageView: UIImageView!
     @IBOutlet weak var menioImageView: UIImageView!
-    @IBOutlet weak var quasimodoImageView: UIImageView!
+
     
     
     @IBAction func redColorTapped(_ sender: Any) {
@@ -331,10 +330,8 @@ class ViewController: UIViewController {
         thonburiImageView.alpha = 1.0
         georgiaImageView.alpha = 0.5
         menioImageView.alpha = 0.5
-        quasimodoImageView.alpha = 0.5
         georgia = 0
         menio = 0
-        quasimodatext = 0
 
     }
     
@@ -347,10 +344,8 @@ class ViewController: UIViewController {
         thonburiImageView.alpha = 0.5
         georgiaImageView.alpha = 1.0
         menioImageView.alpha = 0.5
-        quasimodoImageView.alpha = 0.5
         thonburi = 0
         menio = 0
-        quasimodatext = 0
         
     }
     
@@ -362,31 +357,12 @@ class ViewController: UIViewController {
         thonburiImageView.alpha = 0.5
         georgiaImageView.alpha = 0.5
         menioImageView.alpha = 1.0
-        quasimodoImageView.alpha = 0.5
         georgia = 0
         thonburi = 0
-        quasimodatext = 0
 
     }
     
-    @IBAction func quasimoda(_ sender: Any) {
-        quasimodatext = 1
-        if quasimodatext == 2 {
-            quasimodatext = 1
-        }
-       
-        thonburiImageView.alpha = 0.5
-        georgiaImageView.alpha = 0.5
-        menioImageView.alpha = 0.5
-        quasimodoImageView.alpha = 1.0
-        georgia = 0
-        menio = 0
-        thonburi = 0
-    }
-    
-    
-    
-    
+
     //SEGUE FOR 1st SCREEN
     
     @IBAction func nextButtonTapped(_ sender: Any) {
@@ -402,15 +378,14 @@ class ViewController: UIViewController {
         
 
     }
-    //IT WORKS THROUGH THE FIRST SEGWAY BUT THEN RED GETS RESET TO 0 FOR SOME REASON
-    //I ALSO CAN'T GET THE NAME DISPLAY LABEL TO CONVERT FROM A UI TEXT FEILD TO A STRING BECAUSE THE VARIABLES ARE ACTING LIKE THERE IS NO CLASS
 
-    
 
 
 }
 
 class ViewControllerLoaded: UIViewController {
+    
+    let randomQuestions = ["Do you think there is a life after death?", "A memory you think of often.", "How jealous are you when it comes to your significant other?", "What was your most creative endeavor?", "How do you feel about your family?", "What are you too hard on yourself for?", "Who have you learned from most?", "What brand or product do you buy because oyu trust it?", "Did you ever fail a subject in school, if so what class?", "If you could have any feature from an animal, what would it be?", "How many times a day do you check facebook?", "What distracts you the most everyday?", "Are you a hat person?", "What is your favorite type of tree?", "If you were stuck on bedrest, what would you do to pass the time?", "Would you consider adopting a child?", "Do you have money saved for a rainy day?", "What was the last song you danced to?", "Have you ever swallowed any usually objects?", "What wild animal scares you?", "What is the most expensive thing you ever lost?", "Who can you be yourself around?", "Do you prefer cats or dogs?", "What is the greatest peer pressure you ever felt?"]
     
     @IBOutlet weak var colorChangeBlock: UIImageView!
     
@@ -418,36 +393,62 @@ class ViewControllerLoaded: UIViewController {
     @IBOutlet weak var dailyQuestionsColorChangeBlock: UIImageView!
     @IBOutlet weak var archivedQuestionsBlock: UIImageView!
     
+    @IBOutlet weak var largeBlockDailyQuestions: UIImageView!
+    @IBOutlet weak var smallBlockDailyQuestions: UIImageView!
     
-    @IBOutlet weak var dailyQuesionsButtonOutlet: UIButton!
+    
+    @IBOutlet weak var dailyQuestionsLabel: UILabel!
+    
+    
+    
     @IBOutlet weak var archivedQuestionsButtonOutlet: UIButton!
     @IBOutlet weak var firstNameOutlet: UIButton!
     
     
+    @IBOutlet weak var dailyQuestionsButtonOutlet: UIButton!
     
-    @IBAction func dailyQuestionsButtonPressed(_ sender: Any) {
-    }
+    @IBOutlet weak var placeholderTextQuestion: UILabel!
+    
     
     @IBAction func archivedQuestionsButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "archivedQuestionsButtonSegue", sender: nil)
     }
     
+    @IBAction func dailyQuestionsBlockTapped(_ sender: Any) {
+        performSegue(withIdentifier: "dailyQuestionsButtonSegue", sender: nil)
+        dailyQuestionsLabel.text = randomQuestions.randomElement()
+    }
     
     
     override func viewDidLoad() {
-        
     dailyQuestionsColorChangeBlock.layer.cornerRadius = 8.0
         archivedQuestionsBlock.layer.cornerRadius = 8.0
         
+        
         if thonburi == 1 {
-            dailyQuesionsButtonOutlet.titleLabel?.font = UIFont(name: "Thonburi", size:20)
+            dailyQuestionsLabel.font = UIFont (name: "Thonburi", size: 20)
         archivedQuestionsButtonOutlet.titleLabel?.font = UIFont(name: "Thonburi", size:18)
             firstNameOutlet.titleLabel?.font = UIFont(name: "Thonburi", size:31)
+            dailyQuestionsButtonOutlet.titleLabel?.font = UIFont(name: "Thonburi", size:31)
+            placeholderTextQuestion.font = UIFont (name: "Thonburi", size: 16)
         }
         
-        if quasimodatext == 1 {
-            dailyQuesionsButtonOutlet.titleLabel?.font = UIFont(name: "Quasimoda", size:20)
-            archivedQuestionsButtonOutlet.titleLabel?.font = UIFont(name: "Thonburi", size:18)
-            firstNameOutlet.titleLabel?.font = UIFont(name: "Quasimoda", size:31)
+        if menio == 1 {
+            dailyQuestionsLabel.font = UIFont (name: "menlo", size: 20)
+            archivedQuestionsButtonOutlet.titleLabel?.font = UIFont(name: "menlo", size:15)
+            firstNameOutlet.titleLabel?.font = UIFont(name: "menlo", size:27)
+            
+        dailyQuestionsButtonOutlet.titleLabel?.font = UIFont(name: "menlo", size:31)
+             placeholderTextQuestion.font = UIFont (name: "menlo", size: 16)
+        }
+        
+        if georgia == 1 {
+            dailyQuestionsLabel.font = UIFont (name: "georgia", size: 20)
+    archivedQuestionsButtonOutlet.titleLabel?.font = UIFont(name: "georgia", size:18)
+            firstNameOutlet.titleLabel?.font = UIFont(name: "georgia", size:31)
+            dailyQuestionsButtonOutlet.titleLabel?.font = UIFont(name: "georgia", size:31)
+             placeholderTextQuestion.font = UIFont (name: "georgia", size: 16)
+            
         }
         
         
@@ -456,6 +457,8 @@ class ViewControllerLoaded: UIViewController {
             smallColorChangeBlock.backgroundColor = UIColor(red:0.86, green:0.08, blue:0.08, alpha:0.49)
         dailyQuestionsColorChangeBlock.backgroundColor = UIColor(red:0.86, green:0.08, blue:0.08, alpha:0.11)
             archivedQuestionsBlock.backgroundColor = UIColor(red:0.86, green:0.08, blue:0.08, alpha:0.11)
+        smallBlockDailyQuestions.backgroundColor = UIColor(red:0.86, green:0.08, blue:0.08, alpha:0.49)
+        largeBlockDailyQuestions.backgroundColor = UIColor(red:0.86, green:0.08, blue:0.08, alpha:0.11)
         }
         
         if orange == 1 {
@@ -463,6 +466,9 @@ class ViewControllerLoaded: UIViewController {
             smallColorChangeBlock.backgroundColor = UIColor(red:1.00, green:0.65, blue:0.00, alpha:0.49)
         dailyQuestionsColorChangeBlock.backgroundColor = UIColor(red:1.00, green:0.65, blue:0.00, alpha:0.11)
             archivedQuestionsBlock.backgroundColor = UIColor(red:1.00, green:0.65, blue:0.00, alpha:0.11)
+            
+        smallBlockDailyQuestions.backgroundColor = UIColor(red:1.00, green:0.65, blue:0.00, alpha:0.49)
+        largeBlockDailyQuestions.backgroundColor = UIColor(red:1.00, green:0.65, blue:0.00, alpha:0.11)
         }
         
         if yellow == 1 {
@@ -470,6 +476,8 @@ class ViewControllerLoaded: UIViewController {
             smallColorChangeBlock.backgroundColor = UIColor(red:0.96, green:1.00, blue:0.00, alpha:0.49)
         dailyQuestionsColorChangeBlock.backgroundColor = UIColor(red:0.96, green:1.00, blue:0.00, alpha:0.11)
             archivedQuestionsBlock.backgroundColor = UIColor(red:0.96, green:1.00, blue:0.00, alpha:0.11)
+            smallBlockDailyQuestions.backgroundColor = UIColor(red:0.96, green:1.00, blue:0.00, alpha:0.49)
+        largeBlockDailyQuestions.backgroundColor = UIColor(red:0.96, green:1.00, blue:0.00, alpha:0.11)
         }
         
         if green == 1 {
@@ -477,6 +485,8 @@ class ViewControllerLoaded: UIViewController {
             smallColorChangeBlock.backgroundColor = UIColor(red:0.00, green:1.00, blue:0.11, alpha:0.49)
         dailyQuestionsColorChangeBlock.backgroundColor = UIColor(red:0.00, green:1.00, blue:0.11, alpha:0.11)
             archivedQuestionsBlock.backgroundColor = UIColor(red:0.00, green:1.00, blue:0.11, alpha:0.11)
+            smallBlockDailyQuestions.backgroundColor = UIColor(red:0.00, green:1.00, blue:0.11, alpha:0.49)
+        largeBlockDailyQuestions.backgroundColor = UIColor(red:0.00, green:1.00, blue:0.11, alpha:0.11)
         }
         
         if darkgreen == 1 {
@@ -484,6 +494,8 @@ class ViewControllerLoaded: UIViewController {
             smallColorChangeBlock.backgroundColor = UIColor(red:0.02, green:0.58, blue:0.00, alpha:0.49)
         dailyQuestionsColorChangeBlock.backgroundColor = UIColor(red:0.02, green:0.58, blue:0.00, alpha:0.11)
             archivedQuestionsBlock.backgroundColor = UIColor(red:0.02, green:0.58, blue:0.00, alpha:0.11)
+            smallBlockDailyQuestions.backgroundColor = UIColor(red:0.02, green:0.58, blue:0.00, alpha:0.49)
+        largeBlockDailyQuestions.backgroundColor = UIColor(red:0.02, green:0.58, blue:0.00, alpha:0.11)
         }
         
         if blue == 1 {
@@ -491,6 +503,8 @@ class ViewControllerLoaded: UIViewController {
             smallColorChangeBlock.backgroundColor = UIColor(red:0.35, green:1.00, blue:0.98, alpha:0.49)
         dailyQuestionsColorChangeBlock.backgroundColor = UIColor(red:0.35, green:1.00, blue:0.98, alpha:0.11)
             archivedQuestionsBlock.backgroundColor = UIColor(red:0.35, green:1.00, blue:0.98, alpha:0.11)
+            smallBlockDailyQuestions.backgroundColor = UIColor(red:0.35, green:1.00, blue:0.98, alpha:0.49)
+        largeBlockDailyQuestions.backgroundColor = UIColor(red:0.35, green:1.00, blue:0.98, alpha:0.11)
         }
         
         if darkblue == 1 {
@@ -498,6 +512,8 @@ class ViewControllerLoaded: UIViewController {
             smallColorChangeBlock.backgroundColor = UIColor(red:0.33, green:0.38, blue:1.00, alpha:0.49)
         dailyQuestionsColorChangeBlock.backgroundColor = UIColor(red:0.33, green:0.38, blue:1.00, alpha:0.11)
             archivedQuestionsBlock.backgroundColor = UIColor(red:0.33, green:0.38, blue:1.00, alpha:0.11)
+            smallBlockDailyQuestions.backgroundColor = UIColor(red:0.33, green:0.38, blue:1.00, alpha:0.49)
+    largeBlockDailyQuestions.backgroundColor = UIColor(red:0.33, green:0.38, blue:1.00, alpha:0.11)
         }
         
         if purple == 1 {
@@ -505,6 +521,8 @@ class ViewControllerLoaded: UIViewController {
             smallColorChangeBlock.backgroundColor = UIColor(red:0.40, green:0.00, blue:0.86, alpha:0.49)
         dailyQuestionsColorChangeBlock.backgroundColor = UIColor(red:0.40, green:0.00, blue:0.86, alpha:0.11)
             archivedQuestionsBlock.backgroundColor = UIColor(red:0.40, green:0.00, blue:0.86, alpha:0.11)
+            smallBlockDailyQuestions.backgroundColor = UIColor(red:0.40, green:0.00, blue:0.86, alpha:0.49)
+        largeBlockDailyQuestions.backgroundColor = UIColor(red:0.40, green:0.00, blue:0.86, alpha:0.11)
         }
         
         if pink == 1 {
@@ -512,6 +530,9 @@ class ViewControllerLoaded: UIViewController {
             smallColorChangeBlock.backgroundColor = UIColor(red:1.00, green:0.08, blue:0.82, alpha:0.55)
         dailyQuestionsColorChangeBlock.backgroundColor = UIColor(red:1.00, green:0.08, blue:0.82, alpha:0.11)
             archivedQuestionsBlock.backgroundColor = UIColor(red:1.00, green:0.08, blue:0.82, alpha:0.11)
+            
+    smallBlockDailyQuestions.backgroundColor = UIColor(red:1.00, green:0.08, blue:0.82, alpha:0.55)
+        largeBlockDailyQuestions.backgroundColor = UIColor(red:1.00, green:0.08, blue:0.82, alpha:0.11)
         }
         
         if black == 1 {
@@ -519,6 +540,8 @@ class ViewControllerLoaded: UIViewController {
             smallColorChangeBlock.backgroundColor = UIColor(red:0.00, green:0.00, blue:0.00, alpha:0.49)
         dailyQuestionsColorChangeBlock.backgroundColor = UIColor(red:0.00, green:0.00, blue:0.00, alpha:0.11)
             archivedQuestionsBlock.backgroundColor = UIColor(red:0.00, green:0.00, blue:0.00, alpha:0.11)
+            smallBlockDailyQuestions.backgroundColor = UIColor(red:0.00, green:0.00, blue:0.00, alpha:0.49)
+        largeBlockDailyQuestions.backgroundColor = UIColor(red:0.00, green:0.00, blue:0.00, alpha:0.11)
         }
         
         
