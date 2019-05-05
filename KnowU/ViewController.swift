@@ -52,7 +52,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var quasimodoImageView: UIImageView!
     
     
-    
     @IBAction func redColorTapped(_ sender: Any) {
        red += 1
         if red == 2 {
@@ -416,59 +415,115 @@ class ViewControllerLoaded: UIViewController {
     @IBOutlet weak var colorChangeBlock: UIImageView!
     
     @IBOutlet weak var smallColorChangeBlock: UIImageView!
+    @IBOutlet weak var dailyQuestionsColorChangeBlock: UIImageView!
+    @IBOutlet weak var archivedQuestionsBlock: UIImageView!
+    
+    
+    @IBOutlet weak var dailyQuesionsButtonOutlet: UIButton!
+    @IBOutlet weak var archivedQuestionsButtonOutlet: UIButton!
+    @IBOutlet weak var firstNameOutlet: UIButton!
+    
+    
+    
+    @IBAction func dailyQuestionsButtonPressed(_ sender: Any) {
+    }
+    
+    @IBAction func archivedQuestionsButtonPressed(_ sender: Any) {
+    }
     
     
     
     override func viewDidLoad() {
+        
+    dailyQuestionsColorChangeBlock.layer.cornerRadius = 8.0
+        archivedQuestionsBlock.layer.cornerRadius = 8.0
+        
+        if thonburi == 1 {
+            dailyQuesionsButtonOutlet.titleLabel?.font = UIFont(name: "Thonburi", size:20)
+        archivedQuestionsButtonOutlet.titleLabel?.font = UIFont(name: "Thonburi", size:18)
+            firstNameOutlet.titleLabel?.font = UIFont(name: "Thonburi", size:31)
+        }
+        
+        if quasimodatext == 1 {
+            dailyQuesionsButtonOutlet.titleLabel?.font = UIFont(name: "Quasimoda", size:20)
+            archivedQuestionsButtonOutlet.titleLabel?.font = UIFont(name: "Thonburi", size:18)
+            firstNameOutlet.titleLabel?.font = UIFont(name: "Quasimoda", size:31)
+        }
+        
+        
         if red == 1 {
             colorChangeBlock.backgroundColor = UIColor(red:0.86, green:0.08, blue:0.08, alpha:0.11)
             smallColorChangeBlock.backgroundColor = UIColor(red:0.86, green:0.08, blue:0.08, alpha:0.49)
+        dailyQuestionsColorChangeBlock.backgroundColor = UIColor(red:0.86, green:0.08, blue:0.08, alpha:0.11)
+            archivedQuestionsBlock.backgroundColor = UIColor(red:0.86, green:0.08, blue:0.08, alpha:0.11)
         }
         
         if orange == 1 {
             colorChangeBlock.backgroundColor = UIColor(red:1.00, green:0.65, blue:0.00, alpha:0.11)
             smallColorChangeBlock.backgroundColor = UIColor(red:1.00, green:0.65, blue:0.00, alpha:0.49)
+        dailyQuestionsColorChangeBlock.backgroundColor = UIColor(red:1.00, green:0.65, blue:0.00, alpha:0.11)
+            archivedQuestionsBlock.backgroundColor = UIColor(red:1.00, green:0.65, blue:0.00, alpha:0.11)
         }
         
         if yellow == 1 {
             colorChangeBlock.backgroundColor =  UIColor(red:0.96, green:1.00, blue:0.00, alpha:0.11)
             smallColorChangeBlock.backgroundColor = UIColor(red:0.96, green:1.00, blue:0.00, alpha:0.49)
+        dailyQuestionsColorChangeBlock.backgroundColor = UIColor(red:0.96, green:1.00, blue:0.00, alpha:0.11)
+            archivedQuestionsBlock.backgroundColor = UIColor(red:0.96, green:1.00, blue:0.00, alpha:0.11)
         }
         
         if green == 1 {
         colorChangeBlock.backgroundColor = UIColor(red:0.00, green:1.00, blue:0.11, alpha:0.11)
             smallColorChangeBlock.backgroundColor = UIColor(red:0.00, green:1.00, blue:0.11, alpha:0.49)
+        dailyQuestionsColorChangeBlock.backgroundColor = UIColor(red:0.00, green:1.00, blue:0.11, alpha:0.11)
+            archivedQuestionsBlock.backgroundColor = UIColor(red:0.00, green:1.00, blue:0.11, alpha:0.11)
         }
         
         if darkgreen == 1 {
             colorChangeBlock.backgroundColor = UIColor(red:0.02, green:0.58, blue:0.00, alpha:0.11)
             smallColorChangeBlock.backgroundColor = UIColor(red:0.02, green:0.58, blue:0.00, alpha:0.49)
+        dailyQuestionsColorChangeBlock.backgroundColor = UIColor(red:0.02, green:0.58, blue:0.00, alpha:0.11)
+            archivedQuestionsBlock.backgroundColor = UIColor(red:0.02, green:0.58, blue:0.00, alpha:0.11)
         }
         
         if blue == 1 {
             colorChangeBlock.backgroundColor = UIColor(red:0.35, green:1.00, blue:0.98, alpha:0.11)
             smallColorChangeBlock.backgroundColor = UIColor(red:0.35, green:1.00, blue:0.98, alpha:0.49)
+        dailyQuestionsColorChangeBlock.backgroundColor = UIColor(red:0.35, green:1.00, blue:0.98, alpha:0.11)
+            archivedQuestionsBlock.backgroundColor = UIColor(red:0.35, green:1.00, blue:0.98, alpha:0.11)
         }
         
         if darkblue == 1 {
             colorChangeBlock.backgroundColor = UIColor(red:0.33, green:0.38, blue:1.00, alpha:0.11)
             smallColorChangeBlock.backgroundColor = UIColor(red:0.33, green:0.38, blue:1.00, alpha:0.49)
+        dailyQuestionsColorChangeBlock.backgroundColor = UIColor(red:0.33, green:0.38, blue:1.00, alpha:0.11)
+            archivedQuestionsBlock.backgroundColor = UIColor(red:0.33, green:0.38, blue:1.00, alpha:0.11)
         }
         
         if purple == 1 {
             colorChangeBlock.backgroundColor = UIColor(red:0.40, green:0.00, blue:0.86, alpha:0.11)
             smallColorChangeBlock.backgroundColor = UIColor(red:0.40, green:0.00, blue:0.86, alpha:0.49)
+        dailyQuestionsColorChangeBlock.backgroundColor = UIColor(red:0.40, green:0.00, blue:0.86, alpha:0.11)
+            archivedQuestionsBlock.backgroundColor = UIColor(red:0.40, green:0.00, blue:0.86, alpha:0.11)
         }
         
         if pink == 1 {
             colorChangeBlock.backgroundColor = UIColor(red:1.00, green:0.08, blue:0.82, alpha:0.11)
             smallColorChangeBlock.backgroundColor = UIColor(red:1.00, green:0.08, blue:0.82, alpha:0.55)
+        dailyQuestionsColorChangeBlock.backgroundColor = UIColor(red:1.00, green:0.08, blue:0.82, alpha:0.11)
+            archivedQuestionsBlock.backgroundColor = UIColor(red:1.00, green:0.08, blue:0.82, alpha:0.11)
         }
         
         if black == 1 {
             colorChangeBlock.backgroundColor = UIColor(red:0.00, green:0.00, blue:0.00, alpha:0.11)
             smallColorChangeBlock.backgroundColor = UIColor(red:0.00, green:0.00, blue:0.00, alpha:0.49)
+        dailyQuestionsColorChangeBlock.backgroundColor = UIColor(red:0.00, green:0.00, blue:0.00, alpha:0.11)
+            archivedQuestionsBlock.backgroundColor = UIColor(red:0.00, green:0.00, blue:0.00, alpha:0.11)
         }
+        
+        
+        
+        
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
