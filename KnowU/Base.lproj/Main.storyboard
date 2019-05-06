@@ -325,17 +325,6 @@
                                 <rect key="frame" x="66" y="411" width="240" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kgc-BH-FFr">
-                                <rect key="frame" x="81" y="444" width="210" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Archived Questions">
-                                    <color key="titleColor" red="0.085863448679999996" green="0.0061151352710000001" blue="0.18856164810000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="archivedQuestionsButtonPressed:" destination="AaM-Fl-cwe" eventType="touchUpInside" id="IvZ-gA-I4I"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUT-rN-8Cv">
                                 <rect key="frame" x="45" y="120" width="291" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -351,19 +340,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Archived Questions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0s-tM-Ane">
+                                <rect key="frame" x="101" y="451" width="186" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="DBS-PV-gz9" appends="YES" id="NP0-90-kJJ"/>
+                                </connections>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NZt-mk-Snb"/>
                     </view>
                     <connections>
                         <outlet property="archivedQuestionsBlock" destination="oQa-Nw-PJ5" id="nPJ-CL-95m"/>
-                        <outlet property="archivedQuestionsButtonOutlet" destination="Kgc-BH-FFr" id="Dzi-Ar-l3l"/>
+                        <outlet property="archivedQuestionsLabelOutlet" destination="Q0s-tM-Ane" id="1oc-rc-Ozr"/>
                         <outlet property="colorChangeBlock" destination="Wp5-sR-kXw" id="ce6-H9-g8I"/>
                         <outlet property="dailyQuestionsColorChangeBlock" destination="WRI-HN-g51" id="TqT-YT-PPU"/>
                         <outlet property="dailyQuestionsLabel" destination="gnt-OU-nkd" id="Zfx-TX-YPd"/>
                         <outlet property="firstNameOutlet" destination="SUT-rN-8Cv" id="baG-tV-CIV"/>
                         <outlet property="smallColorChangeBlock" destination="1GC-wb-JVm" id="Kbu-q4-fPu"/>
-                        <segue destination="RcI-3v-EYw" kind="show" id="yOY-za-FIX"/>
+                        <segue destination="RcI-3v-EYw" kind="show" identifier="archivedQuestionsButtonSegue" id="yOY-za-FIX"/>
                         <segue destination="dpK-D1-zGS" kind="show" identifier="dailyQuestionsButtonSegue" id="dpa-DI-uCU"/>
                     </connections>
                 </viewController>
@@ -371,6 +371,11 @@
                 <tapGestureRecognizer id="Ict-9P-WQZ">
                     <connections>
                         <action selector="dailyQuestionsBlockTapped:" destination="AaM-Fl-cwe" id="Xh7-Am-7GX"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="DBS-PV-gz9">
+                    <connections>
+                        <action selector="archivedQuestionsTapped:" destination="AaM-Fl-cwe" id="dHu-hW-S3u"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -408,12 +413,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3xQ-qr-5m0">
-                                <rect key="frame" x="84" y="321" width="240" height="287"/>
+                                <rect key="frame" x="84" y="321" width="240" height="253"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="next" translatesAutoresizingMaskIntoConstraints="NO" id="vUj-Bm-F0k">
+                                <rect key="frame" x="236" y="582" width="93" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mmT-kO-TrD" appends="YES" id="lnx-sJ-LAm"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="AaF-LZ-4mb"/>
@@ -423,9 +436,15 @@
                         <outlet property="largeBlockDailyQuestions" destination="cMT-5n-sPK" id="zPS-oo-AlN"/>
                         <outlet property="placeholderTextQuestion" destination="NyT-yx-J6a" id="0lI-uP-0kv"/>
                         <outlet property="smallBlockDailyQuestions" destination="Y6b-u8-eaG" id="ufY-RN-p2B"/>
+                        <segue destination="AaM-Fl-cwe" kind="show" identifier="nextDailyQuestionSegue" id="hDg-qJ-2tH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="157-4n-6JI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="mmT-kO-TrD">
+                    <connections>
+                        <action selector="nextDailyQuestionTapped:" destination="dpK-D1-zGS" id="DP6-oe-WoG"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2885.5999999999999" y="28.335832083958024"/>
         </scene>
@@ -436,13 +455,49 @@
                     <view key="view" contentMode="scaleToFill" id="huY-0b-SMW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0MT-47-rFl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="191"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qr4-vf-Z6a">
+                                <rect key="frame" x="0.0" y="54" width="375" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Archived Questions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdu-Mg-4lx">
+                                <rect key="frame" x="49" y="81" width="277" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="next" translatesAutoresizingMaskIntoConstraints="NO" id="ddN-Qb-oYy">
+                                <rect key="frame" x="206" y="562" width="114" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="eM8-By-D39" appends="YES" id="Gg1-k6-TU8"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="otK-Ns-pKd"/>
                     </view>
+                    <connections>
+                        <outlet property="archivedQuestionsLabel" destination="Wdu-Mg-4lx" id="RUO-Me-3F6"/>
+                        <outlet property="largeColorBlockArchived" destination="0MT-47-rFl" id="eW2-e2-08h"/>
+                        <outlet property="smallColorBlockArchived" destination="Qr4-vf-Z6a" id="J9B-2o-dXN"/>
+                        <segue destination="AaM-Fl-cwe" kind="show" identifier="nextArchivedQuestionsTapped" id="MRt-cK-miR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="npY-Rj-G2W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="eM8-By-D39">
+                    <connections>
+                        <action selector="nextArchivedQuestionsTapped:" destination="RcI-3v-EYw" id="PDB-P3-0E0"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2880" y="776"/>
+            <point key="canvasLocation" x="2879.1999999999998" y="775.86206896551732"/>
         </scene>
     </scenes>
     <resources>
@@ -465,4 +520,7 @@
         <image name="Yellow" width="47" height="47"/>
         <image name="next" width="132" height="37"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="MRt-cK-miR"/>
+    </inferredMetricsTieBreakers>
 </document>
