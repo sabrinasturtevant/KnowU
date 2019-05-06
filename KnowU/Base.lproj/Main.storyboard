@@ -405,7 +405,7 @@
                                     <color key="titleColor" red="0.085863448679999996" green="0.0061151352710000001" blue="0.18856164810000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Placeholder text question?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NyT-yx-J6a">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Placeholder text question?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NyT-yx-J6a">
                                 <rect key="frame" x="89" y="260" width="230" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -521,6 +521,6 @@
         <image name="next" width="132" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MRt-cK-miR"/>
+        <segue reference="hDg-qJ-2tH"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -428,6 +428,7 @@ class ViewControllerLoaded: UIViewController {
     @IBAction func dailyQuestionsBlockTapped(_ sender: Any) {
         performSegue(withIdentifier: "dailyQuestionsButtonSegue", sender: nil)
         placeholderTextQuestion?.text = randomQuestions.randomElement()
+        print ("random")
     }
     
     @IBAction func nextDailyQuestionTapped(_ sender: Any) {
